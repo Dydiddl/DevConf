@@ -32,13 +32,6 @@ end
 -- Neovim이 lazy.nvim을 찾을 수 있도록 runtime path에 추가
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
--- leader 키는 플러그인을 불러오기 전에 설정
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Setup lazy.nvim
 -- lua/plugins 폴더의 플러그인 설정을 불러옴
 require("lazy").setup({

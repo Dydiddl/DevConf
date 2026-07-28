@@ -40,3 +40,24 @@ This is a document I wrote in case I don't follow the order.
 6. git add .
 7. git commit
 8. git push
+
+
+# Frequently Used Git Commands
+
+| Command | Purpose |
+
+|--------|------|
+
+| git status | Check current status |
+
+| git diff | Check changes |
+
+| git add . | Staging changes |
+
+| git commit -m "..." | Saving changes |
+
+| git pull --ff-only | Safely fetch the latest remote content |
+
+| git push | Upload to GitHub |
+
+| git log --oneline | View commit history |
