@@ -1,0 +1,12 @@
+# Neovim swqp, backup, undo files
+*.swp
+*.swo
+*~
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local files
+.local.lua
