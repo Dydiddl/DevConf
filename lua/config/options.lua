@@ -5,7 +5,7 @@ opt.number = true
 opt.relativenumber = true
 
 -- cursor spacing
-opt.scrolloff = 5
+opt.scrolloff = 10 
 opt.sidescrolloff = 5
 
 -- indentation
@@ -38,3 +38,8 @@ opt.splitbelow = true
 
 -- system clipboard
 opt.clipboard = "unnamedplus"
+
+-- etc
+opt.encoding = "UTF-8"
+opt.cmdheight = 1
+opt.mouse:append("a")
