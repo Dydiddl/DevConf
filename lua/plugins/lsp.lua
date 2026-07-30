@@ -16,6 +16,12 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "jdtls",
+                "basedpyright",
+                "jsonls",
+                "marksman",
+                "yamlls",
+                "bashls",
+                "powershell_es",
             },
 
             automatic_enable = true,

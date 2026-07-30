@@ -8,8 +8,18 @@ return {
 
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-                cond = vim.fn.executable("make") == 1,
+
+                build = table.concat({
+                    "cmake -S. -B build",
+                    "-G Ninja",
+                    "-DCMAKE_BUILD_TYPE=Release",
+                    "&& cmake --build build",
+                }, " "),
+
+                cond = function()
+                    return vim.fn.executable("cmake") == 1
+                        and vim.fn.executable("ninja") == 1
+                end,
             },
         },
 
