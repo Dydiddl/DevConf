@@ -1,57 +1,69 @@
 local languages = {
+    -- Neovim
     "lua",
+    "vim",
+    "vimdoc",
+    "query",
+
+    -- Programming
+    "c",
     "java",
     "python",
-    "json",
+
+    -- Shell
+    "bash",
+    "powershell",
+
+    -- Database
+    "sql",
+
+    -- Documentation
     "markdown",
     "markdown_inline",
+
+    -- Configuration
+    "json",
     "yaml",
-    "bash",
+    "toml",
+    "xml",
+
+    -- Git
+    "git_config",
+    "git_rebase",
+    "gitcommit",
+    "gitignore",
 }
-
 return {
-    {
-        "nvim-treesitter/nvim-treesitter",
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
 
-        branch = "main",
-        lazy = false,
-        build = ":TSUpdate",
+    config = function()
+        local treesitter = require("nvim-treesitter")
 
-        config = function()
-            local treesitter = require("nvim-treesitter")
+        treesitter.install(languages)
 
-            -- 기본 설치 경로를 사용한다.
-            treesitter.setup()
+        vim.api.nvim_create_autocmd("FileType", {
+            callback = function(args)
+                local filetype = vim.bo[args.buf].filetype
+                local language = vim.treesitter.language.get_lang(filetype)
 
-            vim.treesitter.language.register("json", "jsonc")
+                if not language then
+                    return
+                end
 
-            -- 필요한 parser와 query를 설치한다.
-            treesitter.install(languages)
+                local ok = pcall(vim.treesitter.start, args.buf, language)
 
-            -- 해당 파일 형식을 열었을 때 Treesitter 강조를 시작한다.
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = {
-                    "lua",
-                    "java",
-                    "python",
-                    "json",
-                    "jsonc",
-                    "markdown",
-                    "yaml",
-                    "bash",
-                    "sh",
-                    "sql",
-                },
+                if not ok then
+                    return
+                end
 
-                callback = function(args)
-                    local filetype = vim.bo[args.buf].filetype
-                    local language = vim.treesitter.language.get_lang(filetype)
+                vim.wo.foldmethod = "expr"
+                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
-                    if language then
-                        pcall(vim.treesitter.start, args.buf, language)
-                    end
-                end,
-            })
-        end,
-    },
+                vim.bo[args.buf].indentexpr =
+                    "v:lua.require'nvim-treesitter'.indentexpr()"
+            end,
+        })
+    end,
 }
