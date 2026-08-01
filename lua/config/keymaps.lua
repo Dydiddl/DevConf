@@ -1,14 +1,21 @@
 local mapKey = require("utils.keyMapper").mapKey
 
--- neotree toggle
-mapKey('<leader>e', ':Neotree toggle<cr>')
+-- neotree toggle File Explorer
+mapKey("n", "<leader>e", ":Neotree toggle<CR>")
 
--- pane navigatrion
-mapKey('<C-h>', '<C-w>h') -- Left
-mapKey('<C-j>', '<C-w>j') -- Down
-mapKey('<C-k>', '<C-w>k') -- Up
-mapKey('<C-l>', '<C-w>l') -- Right
+-- pane navigation
+mapKey("n", "<C-h>", "<C-w>h")
+mapKey("n", "<C-j>", "<C-w>j")
+mapKey("n", "<C-k>", "<C-w>k")
+mapKey("n", "<C-l>", "<C-w>l")
+
+
+
+-- Visual Mode
 
 -- indent
-mapKey('<', '<gv', 'v')
-mapKey('>', '>gv', 'v')
+mapKey("x", "<", "<gv")
+mapKey("x", ">", ">gv")
+-- move selected lines
+mapKey("x", "J", ":move '>+1<CR>gv=gv")
+mapKey("x", "K", ":move '<-2<CR>gv=gv")

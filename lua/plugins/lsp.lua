@@ -31,30 +31,30 @@ return {
                     end
 
                     mapKey(
+                        "n",
                         "gd",
                         vim.lsp.buf.definition,
-                        "n",
                         opts("Go to definition")
                     )
 
                     mapKey(
+                        "n",
                         "gD",
                         vim.lsp.buf.declaration,
-                        "n",
                         opts("Go to declaration")
                     )
 
                     mapKey(
+                        "n",
                         "K",
                         vim.lsp.buf.hover,
-                        "n",
                         opts("Hover documentation")
                     )
 
                     mapKey(
+                        "n",
                         "<leader>ca",
                         vim.lsp.buf.code_action,
-                        "n",
                         opts("Code Action")
                     )
                 end,

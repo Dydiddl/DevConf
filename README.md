@@ -1,12 +1,10 @@
 # NeoVim Configuration
 
-This is the NeoVim settings used as a section on Windows and macOS.
+This repository contains my Neovim configuration for Windows and macOS.
 
-This is a document I wrote in case I don't follow the order.
+This document records the setup and workflow so I can follow the same process consistently.
 
-
-
-## Method of movement
+## Configuration Directory
 
 ### Window
 
@@ -56,6 +54,9 @@ This is a document I wrote in case I don't follow the order.
 8. git push
 
 
+## Initialization Method
+
+`Remove-Item "$env:LOCALAPPDATA\nvim-data" -Recurse -Force`
 
 
 # Frequently Used Git Commands
