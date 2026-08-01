@@ -1,12 +1,17 @@
-# Neovim swqp, backup, undo files
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor temporary files
 *.swp
 *.swo
 *~
 *.tmp
 
-# OS files
-.DS_Store
-Thumbs.db
+# Logs
+*.log
 
-# Local files
-.local.lua
+# Local test and scratch files
+scratch/
+tmp/
+test.lua
