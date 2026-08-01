@@ -50,6 +50,13 @@ return {
                         "n",
                         opts("Hover documentation")
                     )
+
+                    mapKey(
+                        "<leader>ca",
+                        vim.lsp.buf.code_action,
+                        "n",
+                        opts("Code Action")
+                    )
                 end,
             })
         end,
