@@ -58,8 +58,10 @@ return {
                     return
                 end
 
-                vim.wo.foldmethod = "expr"
-                vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                -- fold 접기 기능 필요할 때 설정해서 사용하자.
+                -- vim.wo.foldmethod = "expr"
+                -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+                -- vim.opt.foldlevelstart = 99
 
                 vim.bo[args.buf].indentexpr =
                     "v:lua.require'nvim-treesitter'.indentexpr()"

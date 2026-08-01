@@ -1,3 +1,5 @@
+local mapKey = require("utils.keyMapper").mapKey
+
 return {
     {
         "mason-org/mason-lspconfig.nvim",
@@ -11,6 +13,47 @@ return {
             "neovim/nvim-lspconfig",
         },
 
+        init = function()
+            local lspKeymapGroup =
+                vim.api.nvim_create_augroup("LspKeymaps", {
+                    clear = true,
+                })
+
+            vim.api.nvim_create_autocmd("LspAttach", {
+                group = lspKeymapGroup,
+
+                callback = function(event)
+                    local opts = function(description)
+                        return {
+                            buffer = event.buf,
+                            desc = "LSP: " .. description,
+                        }
+                    end
+
+                    mapKey(
+                        "gd",
+                        vim.lsp.buf.definition,
+                        "n",
+                        opts("Go to definition")
+                    )
+
+                    mapKey(
+                        "gD",
+                        vim.lsp.buf.declaration,
+                        "n",
+                        opts("Go to declaration")
+                    )
+
+                    mapKey(
+                        "K",
+                        vim.lsp.buf.hover,
+                        "n",
+                        opts("Hover documentation")
+                    )
+                end,
+            })
+        end,
+
         opts = {
             ensure_installed = {
                 -- Lua
@@ -23,7 +66,7 @@ return {
                 "basedpyright",
 
                 -- C
-                -- "clangd",
+                "clangd",
 
                 -- Markdown
                 "marksman",
@@ -37,7 +80,6 @@ return {
                 "powershell_es",
             },
 
-            automatic_enable = true,
         },
     },
 }

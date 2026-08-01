@@ -1,7 +1,8 @@
 return {
     {
         "nvim-telescope/telescope.nvim",
-        version = "*",
+
+        event = "VeryLazy",
 
         dependencies = {
             "nvim-lua/plenary.nvim",
@@ -21,6 +22,8 @@ return {
                         and vim.fn.executable("ninja") == 1
                 end,
             },
+
+            "nvim-telescope/telescope-ui-select.nvim",
         },
 
         keys = {
@@ -54,13 +57,23 @@ return {
             },
         },
 
-        opts = {},
+        opts = function()
+            return {
+                extensions = {
+                    ["ui-select"] = {
+                        require("telescope.themes").get_dropdown({}),
+                    },
+                },
+            }
+        end,
+
 
         config = function(_, opts)
             local telescope = require("telescope")
 
             telescope.setup(opts)
             pcall(telescope.load_extension, "fzf")
+            telescope.load_extension("ui-select")
         end,
     },
 }
