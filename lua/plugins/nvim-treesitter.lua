@@ -4,6 +4,7 @@ local languages = {
     "vim",
     "vimdoc",
     "query",
+    "regex",
 
     -- Programming
     "c",
