@@ -4,12 +4,10 @@
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="passion"
+ZSH_THEME="robbyrussell"
 
 plugins=(
     git
-    zsh-autosuggestions
-    zsh-syntax-highlighting
 )
 
 if [ -f "$ZSH/oh-my-zsh.sh" ]; then

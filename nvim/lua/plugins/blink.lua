@@ -28,7 +28,7 @@ return {
         },
 
         fuzzy = {
-            impementation = "perfer_rust_with_warning",
+            implementation = "prefer_rust_with_warning",
         },
     },
 

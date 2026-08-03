@@ -33,7 +33,21 @@ local languages = {
     "git_rebase",
     "gitcommit",
     "gitignore",
+
+    -- Optional but useful
+    "diff",
+    "properties",
 }
+
+local indent_languages = {
+    lua = true,
+    c = true,
+    java = true,
+    python = true,
+    json = true,
+    yaml = true,
+}
+
 return {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
@@ -53,19 +67,28 @@ return {
                     return
                 end
 
-                local ok = pcall(vim.treesitter.start, args.buf, language)
+                local ok = pcall(
+                    vim.treesitter.start,
+                    args.buf,
+                    language
+                )
 
                 if not ok then
                     return
                 end
 
-                -- fold 접기 기능 필요할 때 설정해서 사용하자.
-                -- vim.wo.foldmethod = "expr"
-                -- vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-                -- vim.opt.foldlevelstart = 99
+                -- Treesitter indentation is experimental.
+                -- Enable it only for languages verified to work well.
+                if indent_languages[language] then
+                    vim.bo[args.buf].indentexpr =
+                        "v:lua.require'nvim-treesitter'.indentexpr()"
+                end
 
-                vim.bo[args.buf].indentexpr =
-                    "v:lua.require'nvim-treesitter'.indentexpr()"
+                -- Fold settings can be enabled later when needed.
+                -- vim.wo.foldmethod = "expr"
+                -- vim.wo.foldexpr =
+                --     "v:lua.vim.treesitter.foldexpr()"
+                -- vim.opt.foldlevelstart = 99
             end,
         })
     end,
