@@ -1,0 +1,121 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "version": 4,
+    "final_space": true,
+    "palette": {
+        "rosewater": "#f5e0dc",
+        "flamingo": "#f2cdcd",
+        "pink": "#f5c2e7",
+        "mauve": "#cba6f7",
+
+        "red": "#f38ba8",
+        "maroon": "#eba0ac",
+        "peach": "#fab387",
+        "yellow": "#f9e2af",
+
+        "green": "#a6e3a1",
+        "teal": "#94e2d5",
+        "sky": "#89dceb",
+        "sapphire": "#74c7ec",
+        "blue": "#89b4fa",
+        "lavender": "#b4befe",
+
+        "text": "#cdd6f4",
+        "subtext1": "#bac2de",
+        "subtext0": "#a6adc8",
+
+        "overlay2": "#9399b2",
+        "overlay1": "#7f849c",
+        "overlay0": "#6c7086",
+
+        "surface2": "#585b70",
+        "surface1": "#45475a",
+        "surface0": "#313244",
+
+        "base": "#1e1e2e",
+        "mantle": "#181825",
+        "crust": "#11111b",
+
+        "accent-1": "#8b67a8",
+        "accent-2": "#6278b3",
+        "accent-3": "#50557a"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "p:mauve",
+                    "template": "    "
+                },
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "p:mauve",
+                    "options": {
+                        "style": "full"
+                    },
+                    "template": "[ {{ .Path }} ] "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "p:blue",
+                    "template": "    "
+                },
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "foreground": "p:lavender",
+                    "options": {
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "branch_template": "{{ regexReplaceAll \"^(feature|fix|hotfix|bugfix)/\" .Branch \"\" }}"
+                    },
+                    "template": "<p:lavender>[ {{ .HEAD }} ]</>{{ if .BranchStatus }} <p:sky>{{ .BranchStatus }}</>{{ end }}{{ if .Working.Changed }} <p:red>  {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }} <p:green>  {{ .Staging.String }}</>{{ end }}"
+                },
+                {
+                    "type": "executiontime",
+                    "style": "plain",
+                    "foreground": "p:overlay2",
+                    "options": {
+                        "threshold": 0,
+                        "style": "austin"
+                    },
+                    "template": " 󰔟 {{ .FormattedMs }}"
+                }
+
+            ]
+
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "status",
+                    "style": "plain",
+                    "foreground": "p:text",
+                    "foreground_templates": [
+                        "{{ if gt .Code 0 }}p:red{{ end }}"
+                    ],
+                    "options": {
+                        "always_enabled": true
+                    },
+                    "template": "❱❱❱ "
+                }
+            ]
+        }
+    ]
+}
