@@ -1,0 +1,49 @@
+[user]
+	name = dydiddl
+	email = dydiddl@naver.com
+[init]
+	defaultBranch = main
+[core]
+    autocrlf = false
+	pager = delta
+[color]
+	ui = auto
+[pull]
+	ff = only
+[push]
+	default = simple
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+[safe]
+	directory = D:/Documents/NGSP_JAVA
+	directory = D:/Documents/Development/NGSP_JAVA
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+    side-by-side = true
+    line-numbers = true
+    syntax-theme = Catppuccin Mocha
+
+    plus-style = "syntax #1e3a2f"
+    plus-emph-style = "syntax #2f5945"
+
+    minus-style = "syntax #442b35"
+    minus-emph-style = "syntax #69404f"
+
+    line-numbers-left-style = "#6c7086"
+    line-numbers-right-style = "#6c7086"
+
+    file-style = "#cba6f7 bold"
+    file-decoration-style = "#cba6f7 ul"
+
+    hunk-header-style = "#89b4fa"
+    hunk-header-decoration-style = "#45475a box"
+
+    commit-style = "#f9e2af bold"
+    commit-decoration-style = "#f9e2af box"
+[merge]
+	conflictStyle = zdiff3
