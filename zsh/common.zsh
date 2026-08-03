@@ -31,3 +31,8 @@ fi
 # alias ll="ls -alF"
 # alias gs="git status"
 
+
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# 항상 마지막에 위치 시킬것
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
