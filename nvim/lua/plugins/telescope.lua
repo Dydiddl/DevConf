@@ -1,3 +1,5 @@
+local is_windows = vim.fn.has("win32") == 1
+
 return {
     {
         "nvim-telescope/telescope.nvim",
@@ -10,16 +12,12 @@ return {
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
 
-                build = table.concat({
-                    "cmake -S. -B build",
-                    "-G Ninja",
-                    "-DCMAKE_BUILD_TYPE=Release",
-                    "&& cmake --build build",
-                }, " "),
+                build = "make",
 
                 cond = function()
-                    return vim.fn.executable("cmake") == 1
-                        and vim.fn.executable("ninja") == 1
+                    return not is_windows
+                        and vim.fn.executable("make") == 1
+                        and vim.fn.executable("cc") == 1
                 end,
             },
 
@@ -67,12 +65,15 @@ return {
             }
         end,
 
-
         config = function(_, opts)
             local telescope = require("telescope")
 
             telescope.setup(opts)
-            pcall(telescope.load_extension, "fzf")
+
+            if not is_windows then
+                telescope.load_extension("fzf")
+            end
+
             telescope.load_extension("ui-select")
         end,
     },
