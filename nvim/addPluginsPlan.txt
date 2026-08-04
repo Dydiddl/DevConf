@@ -1,5 +1,4 @@
-Formatter: confiorm.nvim
-Linter: nvim-lint
+Linter: nvim-lint.lua
 Git: gitsigns.nvim
 Which-key: which-key.nvim
 indent Guide: indendt-blankline.nvim
@@ -7,3 +6,4 @@ indent Guide: indendt-blankline.nvim
 ??
 Surround: nvim-surround
 
+catppuccin 색깔 테마 내가 조정해서 사용해도 문제되는 것은 없는지 확인
