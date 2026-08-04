@@ -2,7 +2,7 @@
 # Common Settings
 # ==================================================
 
-source "$HOME/DevConf/zsh/common.zsh"
+source "$ZDOTDIR/common.zsh"
 
 
 
@@ -10,11 +10,15 @@ source "$HOME/DevConf/zsh/common.zsh"
 # Os Specific Settings
 # ==================================================
 
-case "$(uname -s)" in
-	Darwin)
-		source "$HOME/DevConf/zsh/macos.zsh"
+case "$OSTYPE" in
+	linux-gun*)
+		source "$ZDOTDIR/ubuntu.zsh"
 		;;
-	Linux)
-		source "$HOME/DevConf/zsh/ubuntu.zsh"
+	darwin*)
+		source "$ZDOTDIR/macos.zsh"
 		;;
 esac
+
+source "$ZDOTDIR/prompt.zsh"
+
+source "$ZDOTDIR/plugins.zsh"

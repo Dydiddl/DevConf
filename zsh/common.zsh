@@ -1,38 +1,19 @@
 # ==================================================
-# Oh My Zsh
+# History
 # ==================================================
 
-export ZSH="$HOME/.oh-my-zsh"
+mkdir -p "$XDG_STATE_HOME/zsh"
 
-ZSH_THEME="dydid"
+HISTFILE="$XDG_STATE_HOME/zsh/history"
+HISTSIZE=50000
+SAVEHIST=50000
 
-plugins=(
-    git
-)
-
-if [ -f "$ZSH/oh-my-zsh.sh" ]; then
-	source "$ZSH/oh-my-zsh.sh"
-fi
-
-# ==================================================
-# Python
-# ==================================================
-
-if command -v pyenv >/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-fi
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
 
 
-
-# ==================================================
-# User Aliases
-# ==================================================
-
-# alias ll="ls -alF"
-# alias gs="git status"
-
-
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# 항상 마지막에 위치 시킬것
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
