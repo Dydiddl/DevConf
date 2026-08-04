@@ -1,2 +1,3 @@
-require("config.catppuccin").setup()
-vim.cmd.colorscheme("catppuccin")
+require("config.gruvbox").setup()
+vim.cmd.colorscheme("gruvbox")
+
