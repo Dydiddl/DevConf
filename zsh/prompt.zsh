@@ -14,9 +14,8 @@ zstyle ':vcs_info:*' enable git
 
 # Brackets : ANSI bright black
 # Branch   : ANSI blue
-zstyle ':vcs_info:git:*' formats \
-    ' %F{8}[%f%F{blue}%b%f%F{8}]%f'
-
+zstyle ':vcs_info:git:*' formats '%F{blue}   %b%f'
+zstyle ':vcs_info:git:*' actionformats '%F{blue}   %b|%a%f'
 
 # ==================================================
 # Prompt Rendering
@@ -37,14 +36,15 @@ _dydid_prompt_precmd() {
 
     PROMPT=""
 
-    # Current path
+    # First line: current path
     PROMPT+="%F{magenta}  %~%f"
 
-    # Git branch
+    # First line: Git branch
     PROMPT+="${vcs_info_msg_0_}"
 
-    # Input symbol
-    PROMPT+=" %F{${symbol_color}}~>%f "
+    # Second line: input symbol
+    PROMPT+=$'\n'
+    PROMPT+="%F{${symbol_color}}↝%f "
 }
 
 
