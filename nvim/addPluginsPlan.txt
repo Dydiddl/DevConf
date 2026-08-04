@@ -1,0 +1,9 @@
+Formatter: confiorm.nvim
+Linter: nvim-lint
+Git: gitsigns.nvim
+Which-key: which-key.nvim
+indent Guide: indendt-blankline.nvim
+
+??
+Surround: nvim-surround
+
