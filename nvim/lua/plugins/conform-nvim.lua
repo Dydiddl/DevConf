@@ -9,7 +9,7 @@ return {
 				json = { "prettier" },
 				yaml = { "prettier" },
 				markdown = { "prettier" },
-				sql = { "sql-formatter" },
+				-- sql = { "sql-formatter" },
 				toml = { "taplo" },
 			},
 
