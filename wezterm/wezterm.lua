@@ -14,9 +14,9 @@ local is_macos = wezterm.target_triple:find("darwin") ~= nil
 -- 4 순위 : Hack Nerd Font
 -- 5 순위 : UbuntuMono Nerd Font Mono
 config.font = wezterm.font_with_fallback({
-    "MartianMono Nerd Font Mono",
-    "D2CodingLigature Nerd Font Mono",
-    "Noto Color Emoji",
+	"MartianMono Nerd Font Mono",
+	"D2CodingLigature Nerd Font Mono",
+	"Noto Color Emoji",
 })
 
 config.font_size = 13.0
@@ -31,7 +31,7 @@ config.font_size = 13.0
 -- JetBrains Darcula
 -- obsidian
 -- cyberpunk
-config.color_scheme = "cyberpunk"
+config.color_scheme = "obsidian"
 
 -- window
 config.enable_tab_bar = true
@@ -43,12 +43,11 @@ config.enable_scroll_bar = false
 config.initial_cols = 140
 config.initial_rows = 40
 config.window_padding = {
-    left = 10,
-    right = 10,
-    top = 10,
-    bottom = 10,
+	left = 10,
+	right = 10,
+	top = 10,
+	bottom = 10,
 }
-
 
 config.window_background_opacity = 1
 config.window_close_confirmation = "NeverPrompt"
@@ -60,39 +59,36 @@ config.cursor_blink_rate = 1300
 config.cursor_blink_ease_in = "EaseOut"
 config.cursor_blink_ease_out = "EaseOut"
 config.visual_bell = {
-    fade_in_duration_ms = 75,
-    fade_out_duration_ms = 75,
-    target = "CursorColor",
+	fade_in_duration_ms = 75,
+	fade_out_duration_ms = 75,
+	target = "CursorColor",
 }
-
 
 -- Keep these only if you prefer their rendering.
 -- config.freetype_load_target = "Light"
 -- config.freetype_render_target = "HorizontalLcd"
-
 
 -- ==================================================
 -- Windows
 -- ==================================================
 
 if is_windows then
-    config.default_prog = {
-        "wsl.exe",
-        "-d",
-        "Ubuntu-24.04",
-        "--cd",
-        "/home/dydid",
-    }
-    config.win32_system_backdrop = "Mica"
+	config.default_prog = {
+		"wsl.exe",
+		"-d",
+		"Ubuntu-24.04",
+		"--cd",
+		"/home/dydid",
+	}
+	config.win32_system_backdrop = "Mica"
 end
-
 
 -- ==================================================
 -- macOS
 -- ==================================================
 
 if is_macos then
-    config.native_macos_fullscreen_mode = true
+	config.native_macos_fullscreen_mode = true
 end
 
 return config
