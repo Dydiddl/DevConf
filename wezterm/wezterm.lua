@@ -8,7 +8,8 @@ local is_macos = wezterm.target_triple:find("darwin") ~= nil
 -- ==================================================
 -- Common
 -- ==================================================
--- 1 순위 : JetBrainsMono Nerd Font Mono, D2CodingLigature Nerd Font Mono
+-- 1 순위 : JetBrainsMono Nerd Font Mono,
+--          D2CodingLigature Nerd Font Mono
 -- 2 순위 : MartianMono Nerd Font Mono
 -- 4 순위 : Hack Nerd Font
 -- 5 순위 : UbuntuMono Nerd Font Mono
@@ -20,7 +21,10 @@ config.font = wezterm.font_with_fallback({
 
 config.font_size = 13.0
 
-config.color_scheme = "Gruvbox dark, hard (base16)"
+-- theme
+-- Gruvbox dark, hard (base16)
+-- Hipster Gree
+config.color_scheme = "Hipster Gree"
 
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
