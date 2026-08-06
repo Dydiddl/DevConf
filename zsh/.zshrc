@@ -1,42 +1,20 @@
 # ==================================================
-# Common Settings
+# Oh My Zsh
 # ==================================================
 
-source "$ZDOTDIR/common.zsh"
+export ZSH="$HOME/.local/share/oh-my-zsh"
 
+ZSH_THEME="robbyrussell"
 
+plugins=(
+    git
+)
 
-# ==================================================
-# Os Specific Settings
-# ==================================================
-
-case "$OSTYPE" in
-	linux-gnu*)
-		source "$ZDOTDIR/ubuntu.zsh"
-		;;
-	darwin*)
-		source "$ZDOTDIR/macos.zsh"
-		;;
-esac
-
-# 직접만든 프롬프트를 사용하려면 주석 해제
-# source "$ZDOTDIR/prompt.zsh"
-
-
-
+source "$ZSH/oh-my-zsh.sh"
 
 # ==================================================
-# Plugins
-# ==================================================
-source "$ZDOTDIR/plugins.zsh"
-
-
-
-# ==================================================
-# Oh My Posh
+# User Settings
 # ==================================================
 
-if command -v oh-my-posh >/dev/null 2>&1; then
-    eval "$(oh-my-posh init zsh \
-        --config "$HOME/DevConf/oh-my-posh/theme.omp.json")"
-fi
+export EDITOR="nvim"
+export VISUAL="nvim"

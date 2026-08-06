@@ -15,3 +15,6 @@ Thumbs.db
 scratch/
 tmp/
 test.lua
+
+# Zsh completion cache
+zsh/.zcompdump*

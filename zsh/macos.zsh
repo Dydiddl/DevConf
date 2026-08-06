@@ -1,3 +1,0 @@
-# Homebrew
-
-# export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
