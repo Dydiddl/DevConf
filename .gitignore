@@ -21,3 +21,8 @@ zsh/.zcompdump*
 zsh/.zsh_history
 zsh/.zsh_sessions/
 EOF
+
+# Zsh runtime files
+zsh/.zsh_history
+zsh/.zsh_sessions/
+zsh/.zcompdump*
