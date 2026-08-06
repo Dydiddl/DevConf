@@ -34,9 +34,9 @@ plugins=(
 )
 
 
-# Keep completion cache outside the Git-managed config directory
-mkdir -p "$HOME/.cache/zsh"
-ZSH_COMPDUMP="$HOME/.cache/zsh/.zcompdump-${ZSH_VERSION}"
+# # Keep completion cache outside the Git-managed config directory
+# mkdir -p "$HOME/.cache/zsh"
+# ZSH_COMPDUMP="$HOME/.cache/zsh/.zcompdump-${ZSH_VERSION}"
 
 source "$ZSH/oh-my-zsh.sh"
 

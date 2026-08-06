@@ -1,4 +1,0 @@
-vim .
-ls ~/.local/share
-git clone https://github/com/ohmyzsh/ohmyzsh/git ~/.local/share/oh-my-zsh
-git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.local/share/oh-my-zsh
