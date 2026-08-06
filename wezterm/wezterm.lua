@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local mux = wezterm.mux
 
 local config = wezterm.config_builder()
 
@@ -6,20 +7,32 @@ local is_windows = wezterm.target_triple:find("windows") ~= nil
 local is_macos = wezterm.target_triple:find("darwin") ~= nil
 
 -- ==================================================
+-- Events
+-- ==================================================
+
+wezterm.on("gui-startup", function(cmd)
+    local _, _, window = mux.spawn_window(cmd or {})
+    window:gui_window():set_position(26, 50)
+end)
+
+
+-- ==================================================
 -- Common
 -- ==================================================
+
 -- 1 순위 : JetBrainsMono Nerd Font Mono,
 --          D2CodingLigature Nerd Font Mono
 -- 2 순위 : MartianMono Nerd Font Mono
 -- 4 순위 : Hack Nerd Font
 -- 5 순위 : UbuntuMono Nerd Font Mono
+
 config.font = wezterm.font_with_fallback({
     "MartianMono Nerd Font Mono",
     "D2CodingLigature Nerd Font Mono",
     "Noto Color Emoji",
 })
-
 config.font_size = 13.0
+
 
 -- theme
 -- Harper
@@ -30,15 +43,17 @@ config.font_size = 13.0
 -- cyberpunk
 config.color_scheme = "cyberpunk"
 
+
 -- window
 config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_scroll_bar = false
 
+
 -- terminal size
-config.initial_cols = 140
-config.initial_rows = 40
+config.initial_cols = 207
+config.initial_rows = 62
 config.window_padding = {
     left = 10,
     right = 10,
@@ -46,10 +61,13 @@ config.window_padding = {
     bottom = 10,
 }
 
+
 config.window_background_opacity = 0.85
 config.window_close_confirmation = "NeverPrompt"
 
+
 -- cursor
+
 config.animation_fps = 120
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1300
@@ -64,6 +82,7 @@ config.visual_bell = {
 -- Keep these only if you prefer their rendering.
 -- config.freetype_load_target = "Light"
 -- config.freetype_render_target = "HorizontalLcd"
+
 
 -- ==================================================
 -- Windows
@@ -81,6 +100,7 @@ if is_windows then
     -- config.win32_system_backdrop = "Mica"
 end
 
+
 -- ==================================================
 -- macOS
 -- ==================================================
@@ -88,5 +108,6 @@ end
 if is_macos then
     config.native_macos_fullscreen_mode = true
 end
+
 
 return config
