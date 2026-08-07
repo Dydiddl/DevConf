@@ -46,3 +46,10 @@ export VISUAL="nvim"
 
 [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+
+# ==================================================
+# PATH
+# ==================================================
+typeset -U path PATH
+export PATH="$HOME/.local/bin:$PATH"
