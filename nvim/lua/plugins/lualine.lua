@@ -9,7 +9,7 @@ return {
 	opts = {
 		options = {
 			icons_enabled = true,
-			theme = theme,
+			theme = "auto",
 
 			component_separators = {
 				left = "",

@@ -5,12 +5,13 @@ return {
 
 		config = function()
 			require("mini.icons").setup()
-
 			require("mini.pairs").setup()
-
 			require("mini.ai").setup()
-
 			require("mini.surround").setup()
+			require("mini.comment").setup()
+			require("mini.move").setup()
+			require("mini.bufremove").setup()
+			require("mini.bracketed").setup()
 
 			local files = require("mini.files")
 			local mapKey = require("utils.keyMapper").mapKey
