@@ -1,58 +1,61 @@
 return {
-    "nvim-lualine/lualine.nvim",
-    enabled = true,
+	"nvim-lualine/lualine.nvim",
+	enabled = true,
 
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-    },
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+	},
 
-    opts = {
-        options = {
-            icons_enabled = true,
-            theme = "auto",
-            component_separators = {
-                left = "",
-                right = "",
-            },
-            section_separators = {
-                left = "",
-                right = "",
-            },
-            globalstatus = false,
-        },
+	opts = {
+		options = {
+			icons_enabled = true,
+			theme = theme,
 
-        sections = {
-            lualine_a = {
-                "mode",
-            },
+			component_separators = {
+				left = "",
+				right = "",
+			},
 
-            lualine_b = {
-                "branch",
-                "diff",
-                "diagnostics",
-            },
+			section_separators = {
+				left = "",
+				right = "",
+			},
 
-            lualine_c = {
-                {
-                    "filename",
-                    path = 1,
-                },
-            },
+			globalstatus = false,
+		},
 
-            lualine_x = {
-                "lsp_status",
-                "encoding",
-                "fileformat",
-                "filetype",
-            },
+		sections = {
+			lualine_a = {
+				"mode",
+			},
 
-            lualine_y = {
-                "progress",
-            },
+			lualine_b = {
+				"branch",
+				"diff",
+				"diagnostics",
+			},
 
-            lualine_z = {
-                "location",
-            },
-        },
-    },
+			lualine_c = {
+				{
+					"filename",
+					path = 1,
+				},
+			},
+
+			lualine_x = {
+				"lsp_status",
+				"encoding",
+				"fileformat",
+				"filetype",
+			},
+
+			lualine_y = {
+				"progress",
+			},
+
+			lualine_z = {
+				"location",
+			},
+		},
+	},
 }
