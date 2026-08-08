@@ -5,4 +5,7 @@ theme = Harper
 background-opacity = 0.7
 
 cursor-style = block
+cursor-style-blink = true
+cursor-opacity = 0.95
 
+custom-shader = ~/DevConf/ghostty/shaders/cursor_smear_fade.glsl
