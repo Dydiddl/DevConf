@@ -48,8 +48,10 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_scroll_bar = false
 
-config.window_decorations = "RESIZE"
+config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+
 config.window_background_opacity = 0.75
+config.text_background_opacity = 0.75
 config.warn_about_missing_glyphs = false
 config.window_close_confirmation = "NeverPrompt"
 
@@ -62,9 +64,20 @@ config.window_padding = {
     top = 10,
     bottom = 10,
 }
+config.window_frame = {
+    border_left_width = "2px",
+    border_right_width = "2px",
+    border_bottom_height = "2px",
+    border_top_height = "2px",
 
+    border_left_color = "#555555",
+    border_right_color = "#555555",
+    border_bottom_color = "#555555",
+    border_top_color = "#555555",
+}
 -- cursor
-config.animation_fps = 120
+config.max_fps = 120
+config.animation_fps = 60
 config.default_cursor_style = "BlinkingBlock"
 config.cursor_blink_rate = 1300
 config.cursor_blink_ease_in = "EaseOut"
@@ -75,6 +88,12 @@ config.visual_bell = {
     target = "CursorColor",
 }
 
+-- pane
+config.inactive_pane_hsb = {
+    saturation = 0.9,
+    brightness = 0.7,
+}
+-- pane & split
 local act = wezterm.action
 config.leader = { mods = "CTRL", key = "b", timeout_milliseconds = 2000 }
 config.keys = {
