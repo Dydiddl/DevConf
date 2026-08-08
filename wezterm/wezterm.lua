@@ -30,7 +30,7 @@ config.font = wezterm.font_with_fallback({
     "D2CodingLigature Nerd Font Mono",
     "Noto Color Emoji",
 })
-config.font_size = 13.5
+config.font_size = 12.5
 
 -- theme
 -- Harper
