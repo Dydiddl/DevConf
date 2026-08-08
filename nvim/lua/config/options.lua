@@ -5,7 +5,7 @@ opt.number = true
 opt.relativenumber = true
 
 -- cursor spacing
-opt.scrolloff = 8
+opt.scrolloff = 10
 opt.sidescrolloff = 5
 
 -- indentation
@@ -44,5 +44,3 @@ opt.clipboard:append("unnamedplus")
 -- etc
 opt.encoding = "UTF-8"
 opt.mouse:append("a")
-
-
