@@ -57,7 +57,7 @@ config.window_padding = {
     bottom = 10,
 }
 
-config.window_background_opacity = 0.85
+config.window_background_opacity = 0.75
 config.window_close_confirmation = "NeverPrompt"
 
 -- cursor
