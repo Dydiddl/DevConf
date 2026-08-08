@@ -1,4 +1,4 @@
-require("config.kanagawa").setup({})
-vim.cmd.colorscheme("kanagawa")
+require("config.tokyonight").setup({})
+vim.cmd.colorscheme("tokyonight")
 
 require("config.highlights").setup()
