@@ -4,14 +4,17 @@ return {
 		version = false,
 
 		config = function()
-			require("mini.icons").setup()
-			require("mini.pairs").setup()
+			-- Test diting
 			require("mini.ai").setup()
-			require("mini.surround").setup()
 			require("mini.comment").setup()
 			require("mini.move").setup()
-			require("mini.bufremove").setup()
+			require("mini.pairs").setup()
+			require("mini.surround").setup()
+			-- General workflow
 			require("mini.bracketed").setup()
+			require("mini.bufremove").setup()
+			-- Appearance
+			require("mini.icons").setup()
 
 			local files = require("mini.files")
 			local mapKey = require("utils.keyMapper").mapKey
