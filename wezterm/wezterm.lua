@@ -40,7 +40,7 @@ config.font_size = 12.5
 -- Hipster Gree
 -- cyberpunk
 -- vibrantInk
-config.color_scheme = "VibrantInk"
+config.color_scheme = ""
 
 -- window
 config.enable_tab_bar = true
