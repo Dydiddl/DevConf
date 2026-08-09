@@ -20,8 +20,11 @@ return {
 			-- See also `vertical_bar_cursor_insert_mode` and `distance_stop_animating_vertical_bar`.
 			smear_insert_mode = true,
 
-			-- stiffness = 0.8,
-			-- trailing_stiffness = 0.6,
+			-- particle mode
+
+			-- particles_enabled = true,
+			stiffness = 0.8,
+			trailing_stiffness = 0.6,
 			--
 			-- stiffness_insert_mode = 0.7,
 			-- trailing_stiffness_insert_mode = 0.7,
@@ -29,10 +32,9 @@ return {
 			-- damping = 0.95,
 			-- damping_insert_mode = 0.95,
 			--
-			-- distance_stop_animating = 0.5,
+			distance_stop_animating = 0.5,
 
 			-- -- Particle
-			-- particles_enabled = true,
 			--          time_interval = 6,
 			--
 			-- particles_per_second = 400,
