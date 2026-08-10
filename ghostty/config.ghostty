@@ -1,9 +1,9 @@
 font-family = MartianMono Nerd Font Mono
-font-family = D2CodingLigature Nerd Font Mono
+font-family = D2KodingLigature Nerd Font Mono
 font-size = 14
 
 font-thicken = true
-font-thicken-strength = 50
+font-thicken-strength = 20
 
 window-padding-x = 8
 window-padding-y = 8
