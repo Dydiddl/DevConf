@@ -26,7 +26,10 @@ end)
 
 config.font = wezterm.font_with_fallback({
 	"MartianMono Nerd Font Mono",
-	"D2CodingLigature Nerd Font Mono",
+	{
+		family = "D2CodingLigature Nerd Font Mono",
+		scale = 1.0,
+	},
 	"Noto Color Emoji",
 })
 config.font_size = 12.5
