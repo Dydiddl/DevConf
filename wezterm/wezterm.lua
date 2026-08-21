@@ -18,21 +18,27 @@ end)
 -- Common
 -- ==================================================
 
--- 1 순위 : JetBrainsMono Nerd Font Mono,
---          D2CodingLigature Nerd Font Mono
--- 2 순위 : MartianMono Nerd Font Mono
--- 4 순위 : Hack Nerd Font
--- 5 순위 : UbuntuMono Nerd Font Mono
+-- Latin / Code
+-- 1. MartianMono Nerd Font Mono
+-- 2. JetBrainsMono Nerd Font Mono
+-- 3. Hack Nerd Font
 
+-- Korean fallback
+-- 1. Sarasa Mono K
+-- 2. Noto Sans Mono CJK KR
+-- 3. D2CodingLigature Nerd Font Mono
+
+-- Emoji
+-- Noto Color Emoji
 config.font = wezterm.font_with_fallback({
-    "MartianMono Nerd Font Mono",
+    "JetBrainsMono Nerd Font Mono",
     {
-        family = "D2CodingLigature Nerd Font Mono",
-        scale = 1.0,
+        family = "Pretendard",
+        scale = 1.1,
     },
     "Noto Color Emoji",
 })
-config.font_size = 12.5
+config.font_size = 12.3
 
 -- theme
 -- Harper
@@ -42,7 +48,7 @@ config.font_size = 12.5
 -- Hipster Gree
 -- cyberpunk
 -- vibrantInk
-config.color_scheme = "vibrantInk"
+config.color_scheme = "Blue Matrix"
 
 -- window
 config.enable_tab_bar = true
@@ -58,8 +64,8 @@ config.warn_about_missing_glyphs = false
 config.window_close_confirmation = "NeverPrompt"
 
 -- terminal size
-config.initial_cols = 191
-config.initial_rows = 60
+config.initial_cols = 150
+config.initial_rows = 50
 config.window_padding = {
     left = 10,
     right = 10,
