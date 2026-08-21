@@ -48,7 +48,10 @@ config.font_size = 12.3
 -- Hipster Gree
 -- cyberpunk
 -- vibrantInk
-config.color_scheme = "Blue Matrix"
+-- Apple Classic
+-- Bule Matix
+config.color_scheme = "Pro (Gogh)"
+
 
 -- window
 config.enable_tab_bar = true
@@ -58,8 +61,8 @@ config.enable_scroll_bar = false
 
 config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 
-config.window_background_opacity = 0.75
-config.text_background_opacity = 0.75
+config.window_background_opacity = 0.85
+config.text_background_opacity = 0.85
 config.warn_about_missing_glyphs = false
 config.window_close_confirmation = "NeverPrompt"
 
