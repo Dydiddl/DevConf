@@ -43,8 +43,9 @@ return {
 			},
 
 			lualine_x = {
+				"searchcount",
 				"lsp_status",
-				"encoding",
+				-- "encoding",
 				"fileformat",
 				"filetype",
 			},
