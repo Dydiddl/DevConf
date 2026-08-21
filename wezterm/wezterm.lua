@@ -38,7 +38,7 @@ config.font = wezterm.font_with_fallback({
     },
     "Noto Color Emoji",
 })
-config.font_size = 12.3
+config.font_size = 12
 
 -- theme
 -- Harper
